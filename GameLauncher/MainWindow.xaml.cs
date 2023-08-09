@@ -14,15 +14,16 @@ namespace GameLauncher
         ready,
         failed,
         downloadingGame,
-        downloadingUpdate
+        downloadingUpdate,
+        extractingGame
     }
 
     public partial class MainWindow : Window
     {
         private readonly string VERSION_FILE_LINK = "https://drive.google.com/uc?export=download&id=1ZCDiLvuGtUApkqjf3AcubuG8ZQeZ6a_S";
-        private readonly string GAME_DOWNLOAD_LINK = "https://drive.google.com/uc?export=download&id=1eUeYqfrBA-qSdLcOqnsAFftqugOoFdJH";
-        private readonly string GAME_EXE_FILE_NAME = "Webmain.exe";
-        private readonly string GAME_ZIP_FILE_NAME = "AboveTheSurface.zip";
+        private readonly string GAME_DOWNLOAD_LINK = "https://drive.google.com/uc?export=download&id=1aja7smJSdXioNVvJHrHkGpoyCyCtCo15";
+        private readonly string GAME_EXE_FILE_NAME = "AboveTheSurface/Webmain.exe";
+        private readonly string GAME_ZIP_FILE_NAME = "Build.zip";
 
         private string rootPath;
         private string versionFile;
@@ -50,6 +51,9 @@ namespace GameLauncher
                     case LauncherState.downloadingUpdate:
                         PlayButton.Content = "Updating Game";
                         break;
+                    case LauncherState.extractingGame:
+                        PlayButton.Content = "Extracting Game Data";
+                        break;
                 }
             }
         }
@@ -60,7 +64,7 @@ namespace GameLauncher
             rootPath = Directory.GetCurrentDirectory();
             versionFile = Path.Combine(rootPath, "Version.txt");
             gameZip = Path.Combine(rootPath, GAME_ZIP_FILE_NAME);
-            gameExe = Path.Combine(rootPath, "Build", GAME_EXE_FILE_NAME);
+            gameExe = Path.Combine(rootPath, GAME_EXE_FILE_NAME);
         }
 
         private void CheckForUpdates()
@@ -125,13 +129,15 @@ namespace GameLauncher
         {
             try
             {
+                Status = LauncherState.extractingGame;
                 string onlineVersion = ((Version)e.UserState).ToString();
                 ZipFile.ExtractToDirectory(gameZip, rootPath);
-                File.Delete(gameZip);
-
+              
                 File.WriteAllText(versionFile, onlineVersion);
                 VersionText.Text = onlineVersion;
                 Status = LauncherState.ready;
+
+                File.Delete(gameZip);
             }
             catch (Exception ex)
             {
