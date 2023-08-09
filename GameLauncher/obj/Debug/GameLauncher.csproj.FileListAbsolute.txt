@@ -1,0 +1,16 @@
+C:\Users\raphe\Desktop\Launcher\Tidan-Realms-Launcher\GameLauncher\obj\Debug\GameLauncher.csproj.AssemblyReference.cache
+C:\Users\raphe\Desktop\Launcher\Tidan-Realms-Launcher\GameLauncher\obj\Debug\GameLauncher.csproj.SuggestedBindingRedirects.cache
+C:\Users\raphe\Desktop\Launcher\Tidan-Realms-Launcher\GameLauncher\obj\Debug\MainWindow.g.cs
+C:\Users\raphe\Desktop\Launcher\Tidan-Realms-Launcher\GameLauncher\obj\Debug\App.g.cs
+C:\Users\raphe\Desktop\Launcher\Tidan-Realms-Launcher\GameLauncher\obj\Debug\GameLauncher_MarkupCompile.cache
+C:\Users\raphe\Desktop\Launcher\Tidan-Realms-Launcher\GameLauncher\obj\Debug\GameLauncher_MarkupCompile.lref
+C:\Users\raphe\Desktop\Launcher\Tidan-Realms-Launcher\GameLauncher\bin\Debug\GameLauncher.exe.config
+C:\Users\raphe\Desktop\Launcher\Tidan-Realms-Launcher\GameLauncher\bin\Debug\GameLauncher.exe
+C:\Users\raphe\Desktop\Launcher\Tidan-Realms-Launcher\GameLauncher\bin\Debug\GameLauncher.pdb
+C:\Users\raphe\Desktop\Launcher\Tidan-Realms-Launcher\GameLauncher\obj\Debug\MainWindow.baml
+C:\Users\raphe\Desktop\Launcher\Tidan-Realms-Launcher\GameLauncher\obj\Debug\GameLauncher.g.resources
+C:\Users\raphe\Desktop\Launcher\Tidan-Realms-Launcher\GameLauncher\obj\Debug\GameLauncher.Properties.Resources.resources
+C:\Users\raphe\Desktop\Launcher\Tidan-Realms-Launcher\GameLauncher\obj\Debug\GameLauncher.csproj.GenerateResource.cache
+C:\Users\raphe\Desktop\Launcher\Tidan-Realms-Launcher\GameLauncher\obj\Debug\GameLauncher.csproj.CoreCompileInputs.cache
+C:\Users\raphe\Desktop\Launcher\Tidan-Realms-Launcher\GameLauncher\obj\Debug\GameLauncher.exe
+C:\Users\raphe\Desktop\Launcher\Tidan-Realms-Launcher\GameLauncher\obj\Debug\GameLauncher.pdb
