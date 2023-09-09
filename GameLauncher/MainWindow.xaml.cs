@@ -20,10 +20,10 @@ namespace GameLauncher
 
     public partial class MainWindow : Window
     {
-        private readonly string VERSION_FILE_LINK = "https://drive.google.com/uc?export=download&id=1ZCDiLvuGtUApkqjf3AcubuG8ZQeZ6a_S";
-        private readonly string GAME_DOWNLOAD_LINK = "https://drive.google.com/uc?export=download&id=1aja7smJSdXioNVvJHrHkGpoyCyCtCo15";
+        private readonly string VERSION_FILE_LINK = "https://jojobobby.github.io/client/Version.txt";
+        private readonly string GAME_DOWNLOAD_LINK = "https://raw.githubusercontent.com/jojobobby/jojobobby.github.io/master/client/AboveTheSurface.zip";
         private readonly string GAME_EXE_FILE_NAME = "AboveTheSurface/Webmain.exe";
-        private readonly string GAME_ZIP_FILE_NAME = "Build.zip";
+        private readonly string GAME_ZIP_FILE_NAME = "AboveTheSurface.zip";
 
         private string rootPath;
         private string versionFile;
@@ -132,7 +132,7 @@ namespace GameLauncher
                 Status = LauncherState.extractingGame;
                 string onlineVersion = ((Version)e.UserState).ToString();
                 ZipFile.ExtractToDirectory(gameZip, rootPath);
-              
+
                 File.WriteAllText(versionFile, onlineVersion);
                 VersionText.Text = onlineVersion;
                 Status = LauncherState.ready;
