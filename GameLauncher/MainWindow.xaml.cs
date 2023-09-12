@@ -24,11 +24,13 @@ namespace GameLauncher
         private readonly string GAME_DOWNLOAD_LINK = "https://raw.githubusercontent.com/jojobobby/jojobobby.github.io/master/client/AboveTheSurface.zip";
         private readonly string GAME_EXE_FILE_NAME = "AboveTheSurface/Webmain.exe";
         private readonly string GAME_ZIP_FILE_NAME = "AboveTheSurface.zip";
+        private readonly string GAME_FILE_NAME = "AboveTheSurface";
 
         private string rootPath;
         private string versionFile;
         private string gameZip;
         private string gameExe;
+        private string gameFiles;
 
         private LauncherState _status;
         internal LauncherState Status
@@ -65,6 +67,7 @@ namespace GameLauncher
             versionFile = Path.Combine(rootPath, "Version.txt");
             gameZip = Path.Combine(rootPath, GAME_ZIP_FILE_NAME);
             gameExe = Path.Combine(rootPath, GAME_EXE_FILE_NAME);
+            gameFiles = Path.Combine(rootPath, GAME_FILE_NAME);
         }
 
         private void CheckForUpdates()
@@ -129,6 +132,19 @@ namespace GameLauncher
         {
             try
             {
+                var oldFiles = new DirectoryInfo(gameFiles);
+                if (oldFiles.Exists)
+                {
+                    foreach (FileInfo file in oldFiles.GetFiles())
+                    {
+                        file.Delete();
+                    }
+                    foreach (DirectoryInfo dir in oldFiles.GetDirectories())
+                    {
+                        dir.Delete(true);
+                    }
+                }
+
                 Status = LauncherState.extractingGame;
                 string onlineVersion = ((Version)e.UserState).ToString();
                 ZipFile.ExtractToDirectory(gameZip, rootPath);
